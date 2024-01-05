@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> -->
+    <!-- Link to font awesome pack -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+    <!-- Link to google awesome pack -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,800;1,900&display=swap"
+    />
+  </head>
+  <body>
+    <!-- navbar starts  -->
+    <div class="wrapper">
+
+      <div class="navbar sticky">
+          <nav>
+
+          
+              <div class="navleft">
+                  <a href="" class="logo"><img style="height: 40px; width: 40px;"  class="logo"src="/homework/purple-circle-logo.svg" alt="">Logo</a>
+
+
+
+                  
+                  <a href="home">Home</a>
+
+
+                  <!-- Making the dropdown -->
+                  <div class="dropdown" data-dropdown>
+                  <a href="javascript:void(0);" class="link" data-dropdown-a>About us</a>
+                  
+
+                  <!-- Dropdown content -->
+                  <div class="dropdown-menu information-grid">
+                      <div>
+                          <div class="dropdown-heading">Free Tutorials</div>
+
+                          <div class="dropdown-links">
+                              <a href="">All</a>
+                              <a href="">All</a>
+                              <a href="">All</a>
+
+                          </div>
+                      </div>
+
+                      <div>
+                          <div class="dropdown-heading">Free Tutorials</div>
+
+                          <div class="dropdown-links">
+                              <a href="">All</a>
+                              <a href="">All</a>
+                              <a href="">All</a>
+
+                          </div>
+                      </div>
+                  </div>
+
+                  </div>
+
+                  <div class="dropdown" data-dropdown>
+                      <a href="javascript:void(0);" class="link" data-dropdown-a>Resources</a>
+                      
+  
+                      <!-- Dropdown content -->
+                      <div class="dropdown-menu information-grid">
+                          <div>
+                              <div class="dropdown-heading">Free Tutorials</div>
+  
+                              <div class="dropdown-links">
+                                  <a href="">All</a>
+                                  <a href="">All</a>
+                                  <a href="">All</a>
+  
+                              </div>
+                          </div>
+  
+                          <div>
+                              <div class="dropdown-heading">Free Tutorials</div>
+  
+                              <div class="dropdown-links">
+                                  <a href="">All</a>
+                                  <a href="">All</a>
+                                  <a href="">All</a>
+  
+                              </div>
+                          </div>
+                      </div>
+  
+                      </div>
+
+                  <a href="Contactus">Contact us</a>
+
+              
+              </div>
+
+
+              <div class="navright">
+                  <a href="Sign-in">Sign in</a>
+                  <a href="Get stated">Get started</a>
+                  <a href="Get stated">DarkMode</a>
+
+
+
+              </div>
+          </nav>
+      </div>
+
+
+  </div>
+    <!-- navbar ends  -->
+    <!--navbar js starts-->
+    <script>
+
+      //Working on the nav scroll thingy
+
+      const body=document.body;
+      let lastScroll=0; //Trying to store last time we scrolled or something so that we can determine whether we going up or down. And on that basis we can decide which classes to remove or keep.
+
+      window.addEventListener('scroll',()=>{
+          const currentScroll=window.pageYOffset
+
+          if (currentScroll<=0){
+              body.classList.remove("scroll-up")
+          }
+
+          // Detect if we want to compare values from current and last scroll...
+
+          if ((currentScroll)<lastScroll && body.classList.contains("scroll-down")){
+              body.classList.add("scroll-up")
+              body.classList.remove("scroll-down")
+
+          }
+
+          if ((currentScroll)>lastScroll && !body.classList.contains("scroll-down")){
+              
+              body.classList.add("scroll-down")
+              body.classList.remove("scroll-up")
+
+
+          }
+
+          lastScroll=currentScroll; //So everytime it restarts we would know .
+
+
+
+      })
+
+          // JS for the dropdown thing.
+          document.addEventListener("click", e => {
+          const isDropdownButton = e.target.matches("[data-dropdown-a]")
+          if (!isDropdownButton && e.target.closest("[data-dropdown]") != null) return
+
+          let currentDropdown
+          if (isDropdownButton) {
+              currentDropdown = e.target.closest("[data-dropdown]")
+              currentDropdown.classList.toggle("active")
+          }
+
+          document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
+              if (dropdown === currentDropdown) return
+              dropdown.classList.remove("active")
+          })
+          })
+      
+
+      
+  </script>
+    <!--navbar js ends-->
+
+    <!--window show starts-->
+    <div class="window-section">
+      <div class="sec1">
+        <div class="windowwrapper">
+          <div
+            style="background-image: url(https://cdn.elearningindustry.com/wp-content/uploads/2014/10/Top-9-Tips-to-Boost-Collaboration-Within-Your-eLearning-Team.jpg)"
+          ></div>
+          <div
+            style="background-image: url(https://th.bing.com/th/id/R.729b92cd2e54b660987a287b760b164a?rik=NMo7PbZpglcIng&riu=http%3a%2f%2fwww.wired-for-wealth.com%2fwp-content%2fuploads%2f2014%2f10%2fcollaboration-10-01-14.jpg&ehk=I07oZYDKOMLkj0eMuXDZvQEACEux2cbVpeTTnshagsY%3d&risl=&pid=ImgRaw&r=0)"
+          ></div>
+          <div
+            style="background-image: url(https://th.bing.com/th/id/R.7060c6b344f3c6770a1e37a9610691cd?rik=1BhAmbpCxEe0kg&riu=http%3a%2f%2fpaulkeijzer.com%2fwp-content%2fuploads%2f2013%2f07%2fcollaboration.jpg&ehk=9CvLQNW7AFgrZ8%2fTj9F45pik8x%2fBwzpqkgAENmtdDt8%3d&risl=&pid=ImgRaw&r=0)"
+          ></div>
+          <div
+            style="background-image: url(https://th.bing.com/th/id/OIP.kpXjwPovgmRaW63hNqdlEgAAAA?rs=1&pid=ImgDetMain)"
+          ></div>
+          <div
+            style="background-image: url(https://th.bing.com/th/id/OIP.9s-shKqBSh_51ptdPM_OtwHaE8?rs=1&pid=ImgDetMain)"
+          ></div>
+        </div>
+
+        <div class="info-p">
+          <p>
+            Optimize your efficiency with centralized tools, automate tasks using generative AI, and streamline your workflow by accessing favorite apps seamlessly within UniCollab.Step into a world where your ideas flow seamlessly, and your words dance effortlessly across the screen.
+Unleash the power of words with our text creation oasis — where every keystroke is a step towards crafting brilliance.
+Embark on a journey of endless possibilities, where your words shape worlds and paragraphs paint panoramas.
+Transform the mundane into the extraordinary. Your text creation adventure starts here.
+          </p>
+        </div>
+      </div>
+
+      <div class="sec2">
+        <div class="info-p">
+          <p>
+            Tailor your work experience to fit your preferences. In UniCollab, enjoy the freedom to work on your terms whether it's through messaging, sharing audio and video clips, or participating in live huddles for real-time discussions.
+            UniCollab fosters team unity through organized channels, serving as central hubs that facilitate seamless collaboration across departments, offices, time zones, and external partners.
+            Feel the exhilaration of writing without boundaries, as your words come to life with every click and tap.
+Fuel your passion for expression in a playground of unlimited text creation possibilities.
+In our world of text magic, every sentence is a spell, and every document is a captivating story waiting to be told.
+Enter a realm where writing isn't just a task; it's an immersive experience of crafting, editing, and refining excellence.
+          </p>
+        </div>
+        <div class="windowwrapper">
+          <div
+            style="background-image: url(https://th.bing.com/th/id/OIP.0V8fiymogPCattW4fl46EwHaE8?rs=1&pid=ImgDetMain)"
+          ></div>
+          <div
+            style="background-image: url(https://th.bing.com/th/id/OIP.XH3_CTWvFBQSa9CTwNw-fgHaEK?rs=1&pid=ImgDetMain)"
+          ></div>
+          <div
+            style="background-image: url(https://www.scnsoft.com/_default_upload_bucket/online-collaboration-on-documents.png)"
+          ></div>
+          <div
+            style="background-image: url(https://i.ytimg.com/vi/irHcwMUBxjs/maxresdefault.jpg)"
+          ></div>
+          <div
+            style="background-image: url(https://th.bing.com/th/id/R.38a45a833ed2faa407af9d0231df1328?rik=VChbhP%2fP%2bYxcwA&riu=http%3a%2f%2fcomparecamp.com%2fmedia%2fuploads%2f2015%2f12%2fcoll.jpg&ehk=hs9WtRlFCWmQMadMXiw5iR3rqtadnfYzTFRIqhHxxCk%3d&risl=1&pid=ImgRaw&r=0)"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <!--window show ends-->
+
+    <!-- img silder starts-->
+    <div class="container">
+      <div id="slide">
+        <div
+          class="item"
+          style="
+            background-image: url(./sliderpics/1.png);
+          "
+        >
+          <div class="content">
+            <div class="name">Introduction</div>
+            <div class="des">
+              Welcome to UniCollab, where innovation meets collaboration, and words come to life in real-time.
+            </div>
+            <!-- <button>See more</button> -->
+          </div>
+        </div>
+        <div
+          class="item"
+          style="
+            background-image: url(./sliderpics/2.png);
+          "
+        >
+          <div class="content">
+            <div class="name">Vision</div>
+            <div class="des">
+              Our vision is to redefine the way people create and collaborate on written content. We believe in empowering every writer, editor, and creator with seamless real-time collaboration.
+            </div>
+            <!-- <button>See more</button> -->
+          </div>
+        </div>
+        <div
+          class="item"
+          style="
+            background-image: url(./sliderpics/3.png);
+          "
+        >
+          <div class="content">
+            <div class="name">Mission</div>
+            <div class="des">
+              At UniCollab, we are on a mission to break down the barriers of traditional text editing. We aim to provide a platform where creativity flows effortlessly, and collaboration happens in the blink of an eye.
+            </div>
+            <!-- <button>See more</button> -->
+          </div>
+        </div>
+        <div
+          class="item"
+          style="
+            background-image: url(./sliderpics/4.png);
+          "
+        >
+          <div class="content">
+            <div class="name">Real-Time Magic</div>
+            <div class="des">
+              Experience the magic of real-time collaboration like never before. Our app transforms the solitary act of writing into a dynamic, shared experience where ideas synchronize and creativity knows no bounds.
+            </div>
+            <!-- <button>See more</button> -->
+          </div>
+        </div>
+        <div class="item" style="background-image: url(./sliderpics/5.png)">
+          <div class="content">
+            <div class="name">Passion for Words</div>
+            <div class="des">
+              Words are our passion, and we've built this app for those who share the love for the art of expression. Whether you're a solo wordsmith or part of a dynamic team, our app is designed to elevate your writing experience.
+            </div>
+            <!-- <button>See more</button> -->
+          </div>
+        </div>
+        <div class="item" style="background-image: url(./sliderpics/6.png)">
+          <div class="content">
+            <!-- <div class="name"></div> -->
+            <div class="des">
+              Thank you for being part of the UniCollab community. Together, let's create, collaborate, and transform the way the world experiences the power of words.
+            </div>
+            <!-- <button>See more</button> -->
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+        <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+      </div>
+    </div>
+    <!-- image slider ends  -->
+    <script>
+      //image silder starts
+      document.getElementById("next").onclick = function () {
+        let lists = document.querySelectorAll(".item");
+        document.getElementById("slide").appendChild(lists[0]);
+      };
+      document.getElementById("prev").onclick = function () {
+        let lists = document.querySelectorAll(".item");
+        document.getElementById("slide").prepend(lists[lists.length - 1]);
+      };
+      //image silder ends
+    </script>
+
+    <!-- cards start -->
+    <div class="card-wrapper">
+      <div class="cardcontainer">
+        <div class="card">
+          <div class="front">
+            <img src="./projectpics/1.png" alt="" />
+
+            <h1>Click on me!</h1>
+          </div>
+          <div class="back">
+            <h1>Team Behind the App</h1>
+            <p>Meet the passionate minds behind UniCollab. Our diverse team of developers, designers, and writers came together with a shared goal, to revolutionize text editing and make it an extraordinary experience for you.</p>
+            <!-- <a href="Learn-more">Learn more</a> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="cardcontainer">
+        <div class="card">
+          <div class="front">
+            <img src="./projectpics/2.png" alt="" />
+
+            <h1>Click on me!</h1>
+          </div>
+          <div class="back">
+            <h1>Innovation in Writing</h1>
+            <p>Innovation is at the core of UniCollab. We're not just a text editor; we're a hub for groundbreaking features that make writing, editing, and collaborating a joyous adventure.</p>
+            <!-- <a href="Learn-more">Learn more</a> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="cardcontainer">
+        <div class="card">
+          <div class="front">
+            <img src="./projectpics/3.png" alt="" />
+
+            <h1>Click on me!</h1>
+          </div>
+          <div class="back">
+            <h1>User-Centric Design</h1>
+            <p>Built with you in mind, our app combines a sleek user interface with powerful functionality. Every feature is crafted to enhance your productivity and bring joy to the creative process.</p>
+            <br />
+            <br />
+            <!-- <a href="Learn-more">Learn more</a> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="cardcontainer">
+        <div class="card">
+          <div class="front">
+            <img src="./projectpics/4.png" alt="" />
+
+            <h1>Click on me!</h1>
+          </div>
+          <div class="back">
+            <h1>Join the Revolution</h1>
+            <p>Join us on this exciting journey as we redefine the way people interact with words. Your stories, documents, and ideas deserve to be brought to life in real-time, and we're here to make that happen.</p>
+            <!-- <a href="Learn-more">Learn more</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- cards ends -->
+    <!--fyq starts-->
+    <div class="FAQcontainer">
+      <h2>Frequently Asked Questions</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button id="accordion-button-1" aria-expanded="false">
+            <span class="accordion-title"
+              >Why is the moon sometimes out during the day?</span
+            >
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra
+              suspendisse potenti.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-2" aria-expanded="false">
+            <span class="accordion-title">Why is the sky blue?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra
+              suspendisse potenti.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-3" aria-expanded="false">
+            <span class="accordion-title">Will we ever discover aliens?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra
+              suspendisse potenti.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-4" aria-expanded="false">
+            <span class="accordion-title">How much does the Earth weigh?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra
+              suspendisse potenti.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-5" aria-expanded="false">
+            <span class="accordion-title">How do airplanes stay up?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra
+              suspendisse potenti.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--fyq ends-->
+    <!--fyq js starts-->
+    <script>
+      const items = document.querySelectorAll(".accordion button");
+      function toggleAccordion() {
+        var i;
+        const itemToggle = this.getAttribute("aria-expanded");
+        for (i = 0; i < items.length; i++) {
+          items[i].setAttribute("aria-expanded", "false");
+        }
+        if (itemToggle == "false") {
+          this.setAttribute("aria-expanded", "true");
+        }
+      }
+      items.forEach((item) => item.addEventListener("click", toggleAccordion));
+    </script>
+    <!--fyq js ends-->
+
+    <!--contact us starts-->
+    <div class="container-cont">
+      <main class="row">
+        <!-- Left Section -->
+        <section class="col left">
+          <!-- Title -->
+          <div class="contactTitle">
+            <h2>Get in Touch</h2>
+            <p>Please write the needed info for the user here</p>
+          </div>
+          <!-- Contact info -->
+          <div class="contactInfo">
+            <div class="iconGroup">
+              <div class="icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="details">
+                <span>Phone</span>
+                <span>123456789</span>
+              </div>
+            </div>
+
+            <div class="iconGroup">
+              <div class="icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="details">
+                <span>Email</span>
+                <span>ABC@Exapmle.com</span>
+              </div>
+            </div>
+
+            <div class="iconGroup">
+              <div class="icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="details">
+                <span>Location</span>
+                <span>Building,Area,City,State</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Media1 -->
+          <div class="socialMedia">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </section>
+        <!-- Right Section -->
+        <section class="col right">
+          <!-- Form starts -->
+          <form class="messageForm">
+            <div class="inputGroup halfWidth">
+              <input type="text" name=" " required="required" />
+              <label>Your Name</label>
+            </div>
+
+            <div class="inputGroup halfWidth">
+              <input type="email" name=" " required="required" />
+              <label>Email</label>
+            </div>
+
+            <div class="inputGroup fullWidth">
+              <input type="text" name=" " required="required" />
+              <label>Subject</label>
+            </div>
+
+            <div class="inputGroup fullWidth">
+              <textarea required="required"></textarea>
+              <label>Say Something</label>
+            </div>
+
+            <div class="inputGroup fullWidth">
+              <button>Send Message</button>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+    <!--contact us ends-->
+
+    <!--footer starts-->
+    <footer class="footer">
+      <div class="container-foot">
+        <div class="row-foot">
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="#">about us</a></li>
+              <li><a href="#">our services</a></li>
+              <li><a href="#">privacy policy</a></li>
+              <li><a href="#">affiliate program</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">shipping</a></li>
+              <li><a href="#">returns</a></li>
+              <li><a href="#">order status</a></li>
+              <li><a href="#">payment options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>online shop</h4>
+            <ul>
+              <li><a href="#">watch</a></li>
+              <li><a href="#">bag</a></li>
+              <li><a href="#">shoes</a></li>
+              <li><a href="#">dress</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+   </footer>
+    <!--footer ends-->
+  </body>
+</html>
